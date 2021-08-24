@@ -16,36 +16,44 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1 font-weight-bold">ALGORITHM VISUALIZER</span>
+    <!-- Navigation Bar -->
+    <nav class="navigation-bar navbar navbar-expand-lg navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1 font-weight-bold"><h2>ALGORITHM VISUALIZER</h2></span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Holds the buttons for the sorting algorithms and to generate a new array -->
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="bubble" type="button">Bubble Sort</button>
+                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="bubble" type="button" onclick="bubbleSort()">BUBBLE SORT</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="merge" type="button">Merge Sort</button>
+                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="merge" type="button" onclick="mergseSort()">MERGE SORT</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="quick" type="button">Quick Sort</button>
+                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="quick" type="button" onclick="quickSort()">QUICK SORT</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="insertion" type="button">Insertion Sort</button>
+                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="insertion" type="button" onclick="insertionSort()">INSERTION SORT</button>
                 </li>
             </ul>
             <div class="collapse navbar-collapse justify-content-end">
                 <li class="nav-item">
-                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="generate" type="button">Generate Array</button>
+                    <button class="btn btn-lg btn-dark btn-circle btn-xl px-2 m-3" id="generate" type="button" onclick="generateRandomArray()">GENERATE ARRAY</button>
                 </li>
             </div>
         </div>
     </nav>
-    <div class="container">
 
-    </div>
+    <!-- Container that will hold the "bars" that will represent the array being generated -->
+    <div id="bars" class="container"></div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark">
+        <h5>Copyright (c) 2021 By Alexander Tejeda. All rights reserved</h5>
+    </footer>
 
     <!-- JAVASCRIPT & JQUERY LINKED -->
     <script src="./js/script.js"></script>

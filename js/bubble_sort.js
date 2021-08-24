@@ -4,26 +4,71 @@
 
 */
 
+var container = document.getElementById("bars");
+
 // Sorting algorithm that uses bubble sort
-function bubbleSort(array) {
+async function bubbleSort() {
+
+    // Variable that will allow easier access to the elements within the DOM
+    var bars = document.querySelectorAll(".bar");
 
     // The lastest element is already in place
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 0; i < bars.length; i++) {
 
         // Iteration to check whether or now the current index is greater than the next one
         // If the current > next we are going to swap
         // If the current < next we are going to iterate to next index
-        for (let j = 0; j < (array.length - i - 1); j++) {
+        for (let j = 0; j < (bars.length - i - 1); j++) {
+
+            // Styling the bars that will be comparing 
+            bars[j].style.backgroundColor = "crimson";
+            bars[j + 1].style.backgroundColor = "crimson";
+
+            // To wait for .1 sec
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                    resolve();
+                }, 100)
+            );
+
+            let value1 = parseInt(bars[j].childNodes[0].innerHTML);
+            let value2 = parseInt(bars[j+1].childNodes[0].innerHTML);
 
             // Conditional to check if current index is greater than the next
-            if (array[j] > array[j+1]) {
-                
-                var temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp;
+            // If true swap elements else continue
+            if (value1 > value2) {
+                await swapElements(bars[j], bars[j+1]);
+                bars = document.querySelectorAll(".bar");
             }
-        }
-    }
 
-    return array;
+            // Changing the color to the previous one
+            bars[j].style.backgroundColor = "steelblue";
+            bars[j + 1].style.backgroundColor = "steelblue";
+        }
+
+        // Changing the color of greatest element because in correct index
+        bars[bars.length - i - 1].style.backgroundColor = "mediumseagreen";
+    }
+}
+
+// Function that will hold the functionality to swap two elements 
+function swapElements(x, y) {
+
+    return new Promise((resolve) => {
+  
+        // For exchanging styles of two blocks
+        var temp = x.style.transform;
+        x.style.transform = y.style.transform;
+        y.style.transform = temp;
+  
+        // Callback function that will have a setTimeout
+        window.requestAnimationFrame(function() {
+  
+            // To wait for .25 sec
+            setTimeout(() => {
+                container.insertBefore(y, x);
+                resolve();
+            }, 50);
+        });
+    });
 }
