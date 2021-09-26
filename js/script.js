@@ -11,7 +11,7 @@ function generateRandomArray() {
 
     deleteArray();
 
-    // Constant that will hold the arrray of integers
+    // Constant that will hold the array of integers
     const INTEGER_ARRAY = [];
 
     // While loop that will keep generating random integers from the bounds of (5, 105) 
@@ -37,15 +37,15 @@ function generateRandomArray() {
 
         // Adding classes to the divs in order to style and access them
         bar.classList.add("bar");
-        bar.style.height = `${INTEGER_ARRAY[i] * 3}px`;
+        bar.style.height = `${INTEGER_ARRAY[i] * 4}px`;
         bar.classList.add(`translateX(${i * 30}px)`);
 
         // Creation of the labels that will represent the values associated with the bars that represent indices within the array
-        const barlabel = document.createElement("label");
-        barlabel.classList.add("bar-label");
-        barlabel.innerText = `${INTEGER_ARRAY[i]}`;
+        const barLabel = document.createElement("label");
+        barLabel.classList.add("bar-label");
+        barLabel.innerText = `${INTEGER_ARRAY[i]}`;
 
-        bar.appendChild(barlabel);
+        bar.appendChild(barLabel);
         CONTAINER.appendChild(bar);
     }
 
@@ -60,6 +60,7 @@ function deleteArray() {
     container.innerHTML = '';
 }
 
+// Helper function that will enable certain buttons in order to either generate a new array or start a sorting algorithm
 function enableButtons() {
 
     document.getElementById("bubble").disabled = false;
@@ -71,6 +72,7 @@ function enableButtons() {
     document.getElementById("terminate").disabled = true;
 }
 
+// Helper function that will disable certain button in order to terminate the sorting algorithm 
 function disableButtons() {
 
     document.getElementById("bubble").disabled = true;
@@ -83,6 +85,7 @@ function disableButtons() {
 
 }
 
+// Helper function that holds the logic to enable/disable buttons based on if the sorting algorithm is terminated
 function terminateSort() {
 
     const container = document.querySelector(".container");
@@ -93,6 +96,7 @@ function terminateSort() {
 
 }
 
+// Helper function that holds the logic to enable/disable buttons based on if the sorting algorithm is completed
 function sortCompleted() {
 
     document.getElementById("terminate").disabled = true;

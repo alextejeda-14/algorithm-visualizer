@@ -30,9 +30,10 @@ async function bubbleSort() {
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 75)
+                }, 100)
             );
 
+            // Two values that are going to be compared 
             let value1 = parseInt(bars[j].childNodes[0].innerHTML);
             let value2 = parseInt(bars[j+1].childNodes[0].innerHTML);
 
@@ -55,9 +56,6 @@ async function bubbleSort() {
     sortCompleted();
 }
 
-// var parentDiv = document.getElementById("remoteVideos");
-// parentDiv.insertBefore(newVideo, originalDiv.nextSibling);
-
 // Function that will hold the functionality to swap two elements 
 function swapElements(x, y) {
 
@@ -75,7 +73,7 @@ function swapElements(x, y) {
             setTimeout(() => {
                 container.insertBefore(y, x);
                 resolve();
-            }, 50);
+            }, 100);
         });
     });
 }

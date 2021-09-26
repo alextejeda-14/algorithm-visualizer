@@ -42,7 +42,7 @@ async function insertionSort() {
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 150)
+                }, 100)
             );
 
             // Provide light green color to sorted part of the array
@@ -60,7 +60,7 @@ async function insertionSort() {
         await new Promise((resolve) =>
             setTimeout(() => {
                 resolve();
-            }, 150)
+            }, 100)
         );
 
         // Provide light green color to the ith bar
