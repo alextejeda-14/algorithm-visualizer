@@ -9,10 +9,12 @@ var container = document.getElementById("bars");
 // Sorting algorithm that uses bubble sort
 async function bubbleSort() {
 
+    disableButtons();
+
     // Variable that will allow easier access to the elements within the DOM
     var bars = document.querySelectorAll(".bar");
 
-    // The lastest element is already in place
+    // The last element is already in place
     for (let i = 0; i < bars.length; i++) {
 
         // Iteration to check whether or now the current index is greater than the next one
@@ -24,11 +26,11 @@ async function bubbleSort() {
             bars[j].style.backgroundColor = "crimson";
             bars[j + 1].style.backgroundColor = "crimson";
 
-            // To wait for .1 sec
+            // To wait
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 100)
+                }, 75)
             );
 
             let value1 = parseInt(bars[j].childNodes[0].innerHTML);
@@ -49,7 +51,12 @@ async function bubbleSort() {
         // Changing the color of greatest element because in correct index
         bars[bars.length - i - 1].style.backgroundColor = "mediumseagreen";
     }
+
+    sortCompleted();
 }
+
+// var parentDiv = document.getElementById("remoteVideos");
+// parentDiv.insertBefore(newVideo, originalDiv.nextSibling);
 
 // Function that will hold the functionality to swap two elements 
 function swapElements(x, y) {
@@ -64,7 +71,7 @@ function swapElements(x, y) {
         // Callback function that will have a setTimeout
         window.requestAnimationFrame(function() {
   
-            // To wait for .25 sec
+            // To wait
             setTimeout(() => {
                 container.insertBefore(y, x);
                 resolve();

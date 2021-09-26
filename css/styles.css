@@ -39,6 +39,7 @@ h5 {
     position: relative;
     display: inline-flex;
     width: 20px;
+    margin: 0 1px;
     justify-content: center;
     align-items: center;
     border: 1px solid black;

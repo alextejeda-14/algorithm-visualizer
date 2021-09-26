@@ -48,10 +48,54 @@ function generateRandomArray() {
         bar.appendChild(barlabel);
         CONTAINER.appendChild(bar);
     }
+
+    enableButtons();
+
 }
 
 // Helper function to delete the current "array" or "bars" from the DOM to be repopulated with new array
 function deleteArray() {
+
     const container = document.querySelector(".container");
     container.innerHTML = '';
+}
+
+function enableButtons() {
+
+    document.getElementById("bubble").disabled = false;
+    document.getElementById("quick").disabled = false;
+    document.getElementById("insertion").disabled = false;
+    document.getElementById("merge").disabled = false;
+    document.getElementById("generate").disabled = false;
+
+    document.getElementById("terminate").disabled = true;
+}
+
+function disableButtons() {
+
+    document.getElementById("bubble").disabled = true;
+    document.getElementById("quick").disabled = true;
+    document.getElementById("insertion").disabled = true;
+    document.getElementById("merge").disabled = true;
+    document.getElementById("generate").disabled = true;
+
+    document.getElementById("terminate").disabled = false;
+
+}
+
+function terminateSort() {
+
+    const container = document.querySelector(".container");
+    container.innerHTML = "";
+
+    document.getElementById("terminate").disabled = true;
+    document.getElementById("generate").disabled = false;
+
+}
+
+function sortCompleted() {
+
+    document.getElementById("terminate").disabled = true;
+    document.getElementById("generate").disabled = false;
+
 }
