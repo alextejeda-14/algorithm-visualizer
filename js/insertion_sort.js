@@ -24,14 +24,14 @@ async function insertionSort() {
         // To store the ith bar height to desired height from the value that is stored
         var height = bars[i].style.height;
 
-        // Provide crimson color to the ith bar
-        bars[i].style.backgroundColor = "crimson";
+        // Provide Crimson color to the ith bar
+        bars[i].style.backgroundColor = "Crimson";
 
         // Loop backwards to check whether or not the index >= 0 and the current is greater then the temp
         while (j >= 0 && parseInt(bars[j].childNodes[0].innerHTML) > temp) {
 
-            // Provide crimson color to the jth bar
-            bars[j].style.backgroundColor = "crimson";
+            // Provide Crimson color to the jth bar
+            bars[j].style.backgroundColor = "Crimson";
 
             // Swapping the values of the next and the current and decrementing
             bars[j+1].style.height = bars[j].style.height
@@ -42,12 +42,12 @@ async function insertionSort() {
             await new Promise((resolve) =>
                 setTimeout(() => {
                     resolve();
-                }, 100)
+                }, 150)
             );
 
             // Provide light green color to sorted part of the array
             for (let k = i; k >= 0; k--) {
-                bars[k].style.backgroundColor = "mediumseagreen";
+                bars[k].style.backgroundColor = "MediumSeaGreen";
             }
 
         }
@@ -60,11 +60,12 @@ async function insertionSort() {
         await new Promise((resolve) =>
             setTimeout(() => {
                 resolve();
-            }, 100)
+            }, 150)
         );
 
         // Provide light green color to the ith bar
-        bars[i].style.backgroundColor = "mediumseagreen";
+        bars[i].style.backgroundColor = "MediumSeaGreen";
 
     }
+    sortCompleted();
 }

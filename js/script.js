@@ -37,7 +37,7 @@ function generateRandomArray() {
 
         // Adding classes to the divs in order to style and access them
         bar.classList.add("bar");
-        bar.style.height = `${INTEGER_ARRAY[i] * 4}px`;
+        bar.style.height = `${INTEGER_ARRAY[i] * 3}px`;
         bar.classList.add(`translateX(${i * 30}px)`);
 
         // Creation of the labels that will represent the values associated with the bars that represent indices within the array

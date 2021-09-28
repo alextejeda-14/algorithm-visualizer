@@ -23,8 +23,8 @@ async function bubbleSort() {
         for (let j = 0; j < (bars.length - i - 1); j++) {
 
             // Styling the bars that will be comparing 
-            bars[j].style.backgroundColor = "crimson";
-            bars[j + 1].style.backgroundColor = "crimson";
+            bars[j].style.backgroundColor = "Crimson";
+            bars[j + 1].style.backgroundColor = "PaleGoldenrod";
 
             // To wait
             await new Promise((resolve) =>
@@ -45,12 +45,12 @@ async function bubbleSort() {
             }
 
             // Changing the color to the previous one
-            bars[j].style.backgroundColor = "steelblue";
-            bars[j + 1].style.backgroundColor = "steelblue";
+            bars[j].style.backgroundColor = "SteelBlue";
+            bars[j + 1].style.backgroundColor = "SteelBlue";
         }
 
         // Changing the color of greatest element because in correct index
-        bars[bars.length - i - 1].style.backgroundColor = "mediumseagreen";
+        bars[bars.length - i - 1].style.backgroundColor = "MediumSeaGreen";
     }
 
     sortCompleted();
