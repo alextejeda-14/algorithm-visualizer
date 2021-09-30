@@ -10,9 +10,10 @@ var quickSortArray = [];
 // Sorting algorithm that uses and holds the logic for quick sort
 async function lometoPartition(left, right) {
 
+    // Disabling the buttons on the DOM until the algorithm is completed
     disableButtons();
 
-       // Variable that will allow easier access to the elements within the DOM
+    // Variable that will allow easier access to the elements within the DOM
     var bars = document.querySelectorAll(".bar");
 
     // Initialization of the pivor for each iteration and also the index to where the pivot will move to
@@ -131,7 +132,7 @@ async function lometoPartition(left, right) {
                 }
 
                 // Else if quicksort array contains the second to last index then the node in the last index is in the correct place too
-                else if (quickSortArray.includes(bars[49])) {
+                else if (quickSortArray.includes(bars[bars.length - 2])) {
                     bars[bars.length - 1].style.backgroundColor = "MediumSeaGreen";
                 }
                 
@@ -152,6 +153,7 @@ async function lometoPartition(left, right) {
 
     // Return the index at which this iteration of the swapping took place
     // in order to recursively call the next section to be iterated over
+    sortCompleted();
     return i;
 }
 
@@ -169,7 +171,6 @@ async function quickSorter(left, right) {
         await quickSorter(left, pivot - 1);
         await quickSorter(pivot + 1, right);
     }
-    sortCompleted();
 }
 
 // Function that starts the first iteration of the quicksort array 

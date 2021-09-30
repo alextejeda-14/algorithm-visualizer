@@ -9,6 +9,7 @@ var container = document.getElementById("bars");
 // Sorting algorithm that uses insertion sort
 async function insertionSort() {
 
+    // Disabling the buttons on the DOM until the algorithm is completed
     disableButtons();
 
     // Variable that will allow easier access to the elements within the DOM

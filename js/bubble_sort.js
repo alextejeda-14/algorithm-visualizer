@@ -9,6 +9,7 @@ var container = document.getElementById("bars");
 // Sorting algorithm that uses bubble sort
 async function bubbleSort() {
 
+    // Disabling the buttons on the DOM until the algorithm is completed
     disableButtons();
 
     // Variable that will allow easier access to the elements within the DOM
@@ -52,7 +53,6 @@ async function bubbleSort() {
         // Changing the color of greatest element because in correct index
         bars[bars.length - i - 1].style.backgroundColor = "MediumSeaGreen";
     }
-
     sortCompleted();
 }
 

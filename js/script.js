@@ -38,7 +38,7 @@ function generateRandomArray() {
         // Adding classes to the divs in order to style and access them
         bar.classList.add("bar");
         bar.style.height = `${INTEGER_ARRAY[i] * 3}px`;
-        bar.classList.add(`translateX(${i * 30}px)`);
+        bar.classList.add(`translateX(${INTEGER_ARRAY[i] * 3}px)`);
 
         // Creation of the labels that will represent the values associated with the bars that represent indices within the array
         const barLabel = document.createElement("label");
@@ -50,7 +50,6 @@ function generateRandomArray() {
     }
 
     enableButtons();
-
 }
 
 // Helper function to delete the current "array" or "bars" from the DOM to be repopulated with new array
@@ -67,9 +66,8 @@ function enableButtons() {
     document.getElementById("quick").disabled = false;
     document.getElementById("insertion").disabled = false;
     document.getElementById("merge").disabled = false;
+    document.getElementById("selection").disabled = false;
     document.getElementById("generate").disabled = false;
-
-    document.getElementById("terminate").disabled = true;
 }
 
 // Helper function that will disable certain button in order to terminate the sorting algorithm 
@@ -79,27 +77,12 @@ function disableButtons() {
     document.getElementById("quick").disabled = true;
     document.getElementById("insertion").disabled = true;
     document.getElementById("merge").disabled = true;
+    document.getElementById("selection").disabled = true;
     document.getElementById("generate").disabled = true;
-
-    document.getElementById("terminate").disabled = false;
-
-}
-
-// Helper function that holds the logic to enable/disable buttons based on if the sorting algorithm is terminated
-function terminateSort() {
-
-    const container = document.querySelector(".container");
-    container.innerHTML = "";
-
-    document.getElementById("terminate").disabled = true;
-    document.getElementById("generate").disabled = false;
-
 }
 
 // Helper function that holds the logic to enable/disable buttons based on if the sorting algorithm is completed
 function sortCompleted() {
 
-    document.getElementById("terminate").disabled = true;
     document.getElementById("generate").disabled = false;
-
 }
