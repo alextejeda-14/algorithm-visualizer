@@ -39,6 +39,7 @@ h5 {
     position: relative;
     display: inline-flex;
     width: 20px;
+    margin: 0 1px;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
@@ -47,10 +48,11 @@ h5 {
 
 .bar-label {
     position: absolute;
-    top: -24px;
+    top: -30px;
     width: 100%;
     text-align: center;
     font-weight: bold;
+    transform: rotate(-90deg);
 }
 
 .footer {
